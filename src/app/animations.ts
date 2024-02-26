@@ -1,0 +1,133 @@
+import { transition, style, query, trigger, animate, group } from '@angular/animations';
+
+export const animations1 = trigger('animations1', [
+
+    // Whether or not to use a route to route transition animation, is something that needs to be carefully considered because the amount of time it takes to implement one can be long.
+    // Generally speaking, they should be avoided in Angular unless the scrolling function can be disabled (overflowY = hidden) during the transition or if the developer doesn't mind the scrollY jolting when the route has changed.
+    // I have not figured out a way to fix this without using extensive amounts of code and the standard :enter and :leave options don't work either.
+    // Most elements must be targeted individually and manipulated in order to account for all of the different scenarios that cause the scrollY to jolt when transitioning.
+    // The fade transition was added to the ProjectsPage routes (to and from) because the videos take longer to load during the transition and it was making the slide from left to right transition skip.
+
+    //  ((route purple refresh), possibly remove tablet and mobile animations, maybe optimize tablet and mobile video more, mobile (icon images and text), notes and cleanup, webhosting - github,)                      (TUESDAY AND BEYOND drawing / scroll menu content, links, cover letter TUESDAY AND BEYOND)
+
+    transition('HomePage => AboutPage', [
+        query('#main2', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#home-animation-primary', (style({ display: 'block' }))),
+        query('#home-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#home-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#home-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#home-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#home-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#home-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#home-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('HomePage => ProjectsPage', [
+        query('#main3', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#home-animation-primary', (style({ display: 'block' }))),
+        query('#home-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#home-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#home-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#home-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#home-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#home-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#home-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('HomePage => ContactPage', [
+        query('#main4', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#home-animation-primary', (style({ display: 'block' }))),
+        query('#home-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#home-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#home-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#home-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#home-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#home-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#home-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('AboutPage => HomePage', [
+        query('#main1', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#about-animation-primary', (style({ display: 'block' }))),
+        query('#about-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#about-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#about-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#about-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#about-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#about-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#about-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('AboutPage => ProjectsPage', [
+        query('#main3', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#about-animation-primary', (style({ display: 'block' }))),
+        query('#about-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#about-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#about-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#about-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#about-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#about-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#about-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('AboutPage => ContactPage', [
+        query('#main4', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#about-animation-primary', (style({ display: 'block' }))),
+        query('#about-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#about-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#about-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#about-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#about-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#about-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#about-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('ProjectsPage => HomePage', [
+        query('#main1', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#projects-animation-primary', (style({ display: 'block' }))),
+        query('#projects-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#projects-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#projects-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#projects-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#projects-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#projects-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#projects-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('ProjectsPage => AboutPage', [
+        query('#main2', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#projects-animation-primary', (style({ display: 'block' }))),
+        query('#projects-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#projects-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#projects-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#projects-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#projects-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#projects-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#projects-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('ProjectsPage => ContactPage', [
+        query('#main4', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#projects-animation-primary', (style({ display: 'block' }))),
+        query('#projects-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#projects-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#projects-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#projects-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#projects-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#projects-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#projects-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('ContactPage => HomePage', [
+        query('#main1', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#contact-animation-primary', (style({ display: 'block' }))),
+        query('#contact-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#contact-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#contact-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#contact-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#contact-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#contact-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#contact-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('ContactPage => AboutPage', [
+        query('#main2', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#contact-animation-primary', (style({ display: 'block' }))),
+        query('#contact-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#contact-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#contact-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#contact-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#contact-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#contact-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#contact-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+    transition('ContactPage => ProjectsPage', [
+        query('#main3', (style({ opacity: 0, 'margin-top': '-750rem'}))),
+        query('#contact-animation-primary', (style({ display: 'block' }))),
+        query('#contact-animation-primary', [animate('200ms', style({ width: '0%' }))]),
+        query('#contact-animation-primary', [animate('130ms', style({ width: '2%' }))]),
+        query('#contact-animation-primary', [animate('800ms', style({ width: '100%' }))]),
+        query('#contact-animation-primary', [animate('100ms', style({ width: '100%' }))]),
+        group([query('#contact-animation-secondary', (animate('800ms', style({ width: '100%' })))), query('#contact-animation-primary', [animate('800ms', style({ width: '2%' }))])]),
+        query('#contact-animation-primary', [animate('130ms', style({ width: '0%' }))]),
+    ]),
+]);
